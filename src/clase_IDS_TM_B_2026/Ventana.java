@@ -16,14 +16,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Ventana extends JFrame{
 
-	public Ventana() {
-		// TODO Auto-generated constructor stub.
-		
+	public Ventana() 
+	{		
 		Image pog = Toolkit.getDefaultToolkit().getImage("Pog.png");
 		
 		this.setSize(1050,540);//TAMAÑO VENTANA
@@ -31,12 +32,20 @@ public class Ventana extends JFrame{
 		this.setLocationRelativeTo(null);//PONER EN CENTRO
 		this.setMinimumSize(new Dimension(500,500));//TAMAÑO MINIMO 
 		this.setMaximumSize(new Dimension(500,500));//TAMAÑO MAXIMO
-		this.setTitle("LOG IN");//TITULO DE LA VENTANA
+		this.setTitle("LE VENTANA");//TITULO DE LA VENTANA
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setIconImage(pog);
+		//this.getContentPane().setBackground(Color.decode(getName()));
 		this.setLayout(null);
 		//this.setOpacity(100);
+				
+		this.users();
 		
+		this.setVisible(true);//VER VENTANA					
+	}
+	
+	public void login()
+	{
 		JPanel contenedor = new JPanel();
 		contenedor.setOpaque(true);
 		contenedor.setBackground(new Color(15, 194, 6));
@@ -112,8 +121,11 @@ public class Ventana extends JFrame{
 		acceder.setSize(160,50);
 		acceder.setFont(new Font("Arial",Font.BOLD,29));
 		acceder.setHorizontalAlignment(JLabel.CENTER);
-		contenedor.add(acceder);
-		
+		contenedor.add(acceder);	
+	}
+	
+	public void registro()
+	{
 		JPanel register_contenedor = new JPanel();
 		register_contenedor.setOpaque(true);
 		register_contenedor.setBackground(new Color(3, 153, 56));
@@ -199,13 +211,13 @@ public class Ventana extends JFrame{
 		register_contenedor.add(terminos);
 		
 		JRadioButton accept_terms = new JRadioButton("Acepto los TyC");
-		accept_terms.setBounds(98, 370, 200, 20);
+		accept_terms.setBounds(98, 370, 120, 20);
 		accept_terms.setOpaque(false);
 		accept_terms.setForeground(Color.BLACK);
 		register_contenedor.add(accept_terms);
 		
 		JRadioButton reject_terms = new JRadioButton("Rechazo los TyC");
-		reject_terms.setBounds(269, 370, 200, 20);
+		reject_terms.setBounds(269, 370, 120, 20);
 		reject_terms.setOpaque(false);
 		reject_terms.setForeground(Color.BLACK);
 		register_contenedor.add(reject_terms);
@@ -228,10 +240,79 @@ public class Ventana extends JFrame{
 		crear.setFont(new Font("Arial",Font.BOLD,29));
 		crear.setHorizontalAlignment(JLabel.CENTER);
 		register_contenedor.add(crear);
+	}
+	
+	public void users()
+	{
+		JPanel users = new JPanel();
+		users.setSize(1000,500);
+		users.setLocation(100, 50);
+		users.setBackground(Color.WHITE);
+		users.setLayout(null);
+		this.add(users);
 		
-		this.setVisible(true);//VER VENTANA
-		register_contenedor.repaint();
+		JLabel users_title = new JLabel ("USUARIOS");
+		users_title.setBounds(400, 30, 300, 40);
+		users_title.setHorizontalAlignment(JLabel.CENTER);
+		users_title.setOpaque(true);
+		users_title.setFont(new Font("Arial",Font.BOLD,40));
+		users_title.setBackground(new Color(255, 172, 0));
+		users.add(users_title);
+		
+		JButton export = new JButton("Exportar");
+		export.setBounds(30, 120, 100, 40);
+		users.add(export);
+		
+		JButton add = new JButton("Añadir");
+		add.setBounds(130, 120, 100, 40);
+		users.add(add);
+		
+		Object [] table_head = {"No. contrl","Nombre","Apellidos","Semestre","Promedio","Acciones"};
+		
+		Object [][] table_content = 
+		{
+		        {"2023001","Juan","Pérez López","3","8.7","Editar"},
+		        {"2023002","María","García Hernández","5","9.1","Editar"},
+		        {"2023003","Carlos","Ramírez Torres","2","8.3","Editar"},
+		        {"2023004","Ana","Martínez Cruz","6","9.5","Editar"},
+		        {"2023005","Luis","Hernández Soto","1","8.9","Editar"},
+		        {"2023006","Sofía","Morales Díaz","4","9.3","Editar"},
+		        {"2023007","Diego","Castro Ruiz","2","7.8","Editar"},
+		        {"2023008","Valeria","Ortega Méndez","3","9.0","Editar"},
+		        {"2023009","Miguel","Navarro Campos","5","8.5","Editar"},
+		        {"2023010","Fernanda","Ríos Delgado","6","9.7","Editar"},
+		        {"2023011","Jorge","Vega Castillo","4","8.2","Editar"},
+		        {"2023012","Camila","Paredes Núñez","1","9.4","Editar"},
+		        {"2023013","Andrés","Silva Romero","3","7.9","Editar"},
+		        {"2023014","Daniela","Cruz Herrera","2","8.8","Editar"},
+		        {"2023015","Ricardo","Flores Medina","3","8.6","Editar"},
+		        {"2023016","Paola","Guzmán Reyes","4","9.2","Editar"},
+		        {"2023017","Emiliano","Mendoza Lara","2","7.7","Editar"},
+		        {"2023018","Ximena","Salazar Peña","5","9.6","Editar"},
+		        {"2023019","Brandon","Ibarra Sánchez","1","8.1","Editar"},
+		        {"2023020","Natalia","Cortés Fuentes","6","9.8","Editar"},
+		        {"2023021","Hugo","León Vargas","3","8.4","Editar"},
+		        {"2023022","Renata","Escobar Molina","2","9.0","Editar"},
+		        {"2023023","Iván","Aguilar Rojas","4","7.9","Editar"},
+		        {"2023024","Lucía","Benítez Cárdenas","5","8.7","Editar"},
+		        {"2023025","Alonso","Miranda Campos","1","8.3","Editar"},
+		        {"2023026","Regina","Santos Cabrera","6","9.4","Editar"},
+		        {"2023027","Gael","Domínguez Herrera","2","7.6","Editar"},
+		        {"2023028","Elena","Valdez Márquez","3","9.1","Editar"},
+		        {"2023029","Matías","Suárez Ponce","4","8.0","Editar"},
+		        {"2023030","Diana","Chávez Lozano","5","9.5","Editar"},
+		        {"2023031","Sebastián","Mejía Navarro","1","8.2","Editar"},
+		        {"2023032","Carla","Ramos Silva","6","9.7","Editar"},
+		        {"2023033","Fernando","Delgado Ortiz","3","7.8","Editar"},
+		        {"2023034","Andrea","Prieto Castillo","4","8.9","Editar"},
+		};
+		
+		JTable users_table = new JTable(table_content, table_head);
+		JScrollPane scrollPane = new JScrollPane(users_table);
+		scrollPane.setBounds(30, 170, 800, 200);
+		//scrollPane.setBorder(BorderFactory.createLineBorder(Color.RED));
+		users.add(scrollPane);
 		
 	}
-
+	
 }
