@@ -26,7 +26,7 @@ public class Ventana extends JFrame{
 		
 		Image pog = Toolkit.getDefaultToolkit().getImage("Pog.png");
 		
-		this.setSize(1050,500);//TAMAÑO VENTANA
+		this.setSize(1050,540);//TAMAÑO VENTANA
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//DETENER PROGRAMA AL CERRAR
 		this.setLocationRelativeTo(null);//PONER EN CENTRO
 		this.setMinimumSize(new Dimension(500,500));//TAMAÑO MINIMO 
@@ -122,34 +122,67 @@ public class Ventana extends JFrame{
 		register_contenedor.setLayout(null);
 		this.add(register_contenedor);
 		
+		JLabel Regist = new JLabel();
+		Regist.setText("Registro");
+		Regist.setSize(350, 65);
+		Regist.setOpaque(false);
+		Regist.setLocation(68, 5);
+		Regist.setFont(new Font("Arial",Font.BOLD,50));
+		Regist.setHorizontalAlignment(JLabel.CENTER);
+		Regist.setForeground(Color.BLACK);
+		register_contenedor.add(Regist);
+		
+		JLabel usuario2 = new JLabel();
+		usuario2.setText("Usuario:");
+		usuario2.setSize(350, 30);
+		usuario2.setOpaque(false);
+		usuario2.setLocation(68, 60);
+		usuario2.setFont(new Font("Arial",Font.BOLD,20));
+		usuario2.setForeground(Color.BLACK);
+		register_contenedor.add(usuario2);
+		
+		JTextField username2 = new JTextField();
+		username2.setSize(350,30);
+		username2.setLocation(68, 90);
+		username2.setFont(new Font("Arial",Font.BOLD,26));
+		register_contenedor.add(username2);
+		
 		JLabel bio_tag = new JLabel("Biografía");
-		bio_tag.setBounds(68, 60, 350, 60);
-		bio_tag.setBackground(Color.white);
-		bio_tag.setOpaque(true);
+		bio_tag.setBounds(68, 115, 350, 60);
+		bio_tag.setOpaque(false);
 		bio_tag.setHorizontalAlignment(JLabel.CENTER);
-		bio_tag.setFont(new Font("Arial",Font.BOLD,50));
+		bio_tag.setFont(new Font("Arial",Font.BOLD,30));
+		bio_tag.setForeground(Color.BLACK);
 		register_contenedor.add(bio_tag);
 		
 		JTextArea biogra = new JTextArea();
-		biogra.setBounds(68, 150, 300, 200);
+		biogra.setBounds(68, 170, 350, 100);
 		register_contenedor.add(biogra);
 		
+		JLabel pref = new JLabel("Preferencias");
+		pref.setBounds(68, 265, 350, 60);
+		pref.setOpaque(false);
+		pref.setHorizontalAlignment(JLabel.CENTER);
+		pref.setFont(new Font("Arial",Font.BOLD,30));
+		pref.setForeground(Color.BLACK);
+		register_contenedor.add(pref);
+		
 		JCheckBox dulce_op = new JCheckBox("Dulce");
-		dulce_op.setBounds(268, 350, 100, 20);
+		dulce_op.setBounds(330, 308, 100, 20);
 		dulce_op.setOpaque(false);
 		dulce_op.setFont(new Font("Arial",Font.BOLD,10));
 		dulce_op.setForeground(Color.BLACK);
 		register_contenedor.add(dulce_op);
 		
 		JCheckBox salado_op = new JCheckBox("Salado");
-		salado_op.setBounds(168, 350, 100, 20);
+		salado_op.setBounds(210, 308, 100, 20);
 		salado_op.setOpaque(false);
 		salado_op.setFont(new Font("Arial",Font.BOLD,10));
 		salado_op.setForeground(Color.BLACK);
 		register_contenedor.add(salado_op);
 		
 		JCheckBox salud_op = new JCheckBox("Saludable");
-		salud_op.setBounds(68, 350, 100, 20);
+		salud_op.setBounds(90, 308, 100, 20);
 		salud_op.setOpaque(false);
 		salud_op.setFont(new Font("Arial",Font.BOLD,10));
 		salud_op.setForeground(Color.BLACK);
@@ -157,12 +190,22 @@ public class Ventana extends JFrame{
 		//salud_op.setBorder(BorderFactory.createLineBorder(Color.RED));
 		register_contenedor.add(salud_op);
 		
-		JRadioButton accept_terms = new JRadioButton("Acepto los terminos y condiciones");
-		accept_terms.setBounds(68, 400, 200, 20);
+		JLabel terminos = new JLabel("Términos");
+		terminos.setBounds(68, 320, 350, 60);
+		terminos.setOpaque(false);
+		terminos.setHorizontalAlignment(JLabel.CENTER);
+		terminos.setFont(new Font("Arial",Font.BOLD,30));
+		terminos.setForeground(Color.BLACK);
+		register_contenedor.add(terminos);
+		
+		JRadioButton accept_terms = new JRadioButton("Acepto los TyC");
+		accept_terms.setBounds(98, 370, 200, 20);
+		accept_terms.setOpaque(false);
+		accept_terms.setForeground(Color.BLACK);
 		register_contenedor.add(accept_terms);
 		
-		JRadioButton reject_terms = new JRadioButton("Rechazo los terminos y condiciones");
-		reject_terms.setBounds(269, 400, 200, 20);
+		JRadioButton reject_terms = new JRadioButton("Rechazo los TyC");
+		reject_terms.setBounds(269, 370, 200, 20);
 		reject_terms.setOpaque(false);
 		reject_terms.setForeground(Color.BLACK);
 		register_contenedor.add(reject_terms);
@@ -174,12 +217,20 @@ public class Ventana extends JFrame{
 		String [] colonias = {"Camino real","La fuente","Villas del encanto"};
 		
 		JComboBox list = new JComboBox(colonias);
-		list.setBounds(0, 0, 200, 60);
+		list.setBounds(150, 410, 200, 20);
 		register_contenedor.add(list);
+		
+
+		JButton crear = new JButton();
+		crear.setText("Crear cuenta");
+		crear.setLocation(135,440);
+		crear.setSize(230,50);
+		crear.setFont(new Font("Arial",Font.BOLD,29));
+		crear.setHorizontalAlignment(JLabel.CENTER);
+		register_contenedor.add(crear);
 		
 		this.setVisible(true);//VER VENTANA
 		register_contenedor.repaint();
-
 		
 	}
 
