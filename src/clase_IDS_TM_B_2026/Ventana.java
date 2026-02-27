@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Insets;
 import java.awt.Toolkit;
 
 import javax.swing.BorderFactory;
@@ -39,7 +40,7 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.users();
+		this.calculadora();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -314,5 +315,143 @@ public class Ventana extends JFrame{
 		users.add(scrollPane);
 		
 	}
+	
+	public void calculadora() {
+		
+		JPanel calc = new JPanel();
+		calc.setSize(250,400);
+		calc.setLocation(100, 50);
+		calc.setBackground(Color.black);
+		calc.setLayout(null);
+		this.add(calc);
+		
+		JLabel calcu = new JLabel();
+		calcu.setText("Calculadora:");
+		calcu.setOpaque(false);
+		calcu.setBounds(10, 7, 185, 30);
+		calcu.setFont(new Font("Arial",Font.BOLD,20));
+		calcu.setForeground(Color.white);
+		calc.add(calcu);
+		
+		JTextField result = new JTextField();
+		result.setBounds(10, 40, 230, 50);
+		result.setFont(new Font("Arial",Font.BOLD,26));
+		calc.add(result);
+		
+		JButton numcam = new JButton("+/-");
+		numcam.setBounds(10, 340, 50, 50);
+		numcam.setFont(new Font("Full-Width",Font.BOLD,20));
+		numcam.setMargin(new Insets(2,2,2,2));
+		calc.add(numcam);
+		
+		JButton num0 = new JButton("0");
+		num0.setBounds(70, 340, 50, 50);
+		num0.setFont(new Font("Full-Width",Font.BOLD,20));
+		num0.setMargin(new Insets(2,2,2,2));
+		calc.add(num0);
+		
+		JButton numpunt = new JButton(".");
+		numpunt.setBounds(130, 340, 50, 50);
+		numpunt.setFont(new Font("Full-Width",Font.BOLD,20));
+		numpunt.setMargin(new Insets(2,2,2,2));
+		calc.add(numpunt);
+
+		JButton numigu = new JButton("=");
+		numigu.setBounds(190, 340, 50, 50);
+		numigu.setFont(new Font("Full-Width",Font.BOLD,20));
+		numigu.setMargin(new Insets(2,2,2,2));
+		numigu.setBackground(new Color(214, 79, 45));
+		numigu.setForeground(Color.BLACK);
+		calc.add(numigu);
+
+		JButton num1 = new JButton("1");
+		num1.setBounds(10, 280, 50, 50);
+		num1.setFont(new Font("Full-Width",Font.BOLD,20));
+		num1.setMargin(new Insets(2,2,2,2));
+		calc.add(num1);
+		
+		JButton num2 = new JButton("2");
+		num2.setBounds(70, 280, 50, 50);
+		num2.setFont(new Font("Full-Width",Font.BOLD,20));
+		num2.setMargin(new Insets(2,2,2,2));
+		calc.add(num2);
+		
+		JButton num3 = new JButton("3");
+		num3.setBounds(130, 280, 50, 50);
+		num3.setFont(new Font("Full-Width",Font.BOLD,20));
+		num3.setMargin(new Insets(2,2,2,2));
+		calc.add(num3);
+
+		JButton numas = new JButton("+");
+		numas.setBounds(190, 280, 50, 50);
+		numas.setFont(new Font("Full-Width",Font.BOLD,20));
+		numas.setMargin(new Insets(2,2,2,2));
+		calc.add(numas);
+		
+		JButton num4 = new JButton("4");
+		num4.setBounds(10, 220, 50, 50);
+		num4.setFont(new Font("Full-Width",Font.BOLD,20));
+		num4.setMargin(new Insets(2,2,2,2));
+		calc.add(num4);
+		
+		JButton num5 = new JButton("5");
+		num5.setBounds(70, 220, 50, 50);
+		num5.setFont(new Font("Full-Width",Font.BOLD,20));
+		num5.setMargin(new Insets(2,2,2,2));
+		calc.add(num5);
+		
+		JButton num6 = new JButton("6");
+		num6.setBounds(130, 220, 50, 50);
+		num6.setFont(new Font("Full-Width",Font.BOLD,20));
+		num6.setMargin(new Insets(2,2,2,2));
+		calc.add(num6);
+
+		JButton numens = new JButton("-");
+		numens.setBounds(190, 220, 50, 50);
+		numens.setFont(new Font("Full-Width",Font.BOLD,20));
+		numens.setMargin(new Insets(2,2,2,2));
+		calc.add(numens);
+		
+		JButton num7 = new JButton("7");
+		num7.setBounds(10, 160, 50, 50);
+		num7.setFont(new Font("Full-Width",Font.BOLD,20));
+		num7.setMargin(new Insets(2,2,2,2));
+		calc.add(num7);
+		
+		JButton num8 = new JButton("8");
+		num8.setBounds(70, 160, 50, 50);
+		num8.setFont(new Font("Full-Width",Font.BOLD,20));
+		num8.setMargin(new Insets(2,2,2,2));
+		calc.add(num8);
+		
+		JButton num9 = new JButton("9");
+		num9.setBounds(130, 160, 50, 50);
+		num9.setFont(new Font("Full-Width",Font.BOLD,20));
+		num9.setMargin(new Insets(2,2,2,2));
+		calc.add(num9);
+
+		JButton numpor = new JButton("X");
+		numpor.setBounds(190, 160, 50, 50);
+		numpor.setFont(new Font("Full-Width",Font.BOLD,20));
+		numpor.setMargin(new Insets(2,2,2,2));
+		calc.add(numpor);
+		
+		JButton numC = new JButton("C");
+		numC.setBounds(10, 100, 170, 50);
+		numC.setBackground(new Color(95, 205, 217));
+		numC.setFont(new Font("Full-Width",Font.BOLD,20));
+		numC.setMargin(new Insets(2,2,2,2));
+		numC.setForeground(Color.BLACK);
+		calc.add(numC);
+
+		JButton numdiv = new JButton("÷");
+		numdiv.setBounds(190, 100, 50, 50);
+		numdiv.setFont(new Font("Full-Width",Font.BOLD,20));
+		numdiv.setMargin(new Insets(2,2,2,2));
+		calc.add(numdiv);
+		
+		
+	}
+	
 	
 }
