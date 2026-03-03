@@ -1,6 +1,7 @@
 package clase_IDS_TM_B_2026;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
@@ -9,11 +10,15 @@ import java.awt.Toolkit;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -28,7 +33,7 @@ public class Ventana extends JFrame{
 	{		
 		Image pog = Toolkit.getDefaultToolkit().getImage("Pog.png");
 		
-		this.setSize(1050,540);//TAMAÑO VENTANA
+		this.setSize(500,540);//TAMAÑO VENTANA
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//DETENER PROGRAMA AL CERRAR
 		this.setLocationRelativeTo(null);//PONER EN CENTRO
 		this.setMinimumSize(new Dimension(500,500));//TAMAÑO MINIMO 
@@ -40,7 +45,7 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.calculadora();
+		this.login();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -54,6 +59,29 @@ public class Ventana extends JFrame{
 		contenedor.setLocation(0, 0);
 		contenedor.setLayout(null);
 		this.add(contenedor);
+		
+		JMenu archivo = new JMenu("Archivo");
+		
+		JMenuItem nuevo = new JMenuItem("Nuevo");
+		JMenuItem abrir = new JMenuItem("Abrir");
+		JMenuItem guardar = new JMenuItem("Guardar");
+		JMenuItem cerrar = new JMenuItem("Cerrar");
+		
+		archivo.add(nuevo);
+		archivo.addSeparator();
+		archivo.add(abrir);
+		archivo.addSeparator();
+		archivo.add(guardar);
+		archivo.addSeparator();
+		archivo.add(cerrar);
+		archivo.addSeparator();	
+		
+		JMenu ayuda = new JMenu("Ayuda");
+		
+		JMenuBar opciones = new JMenuBar();
+		opciones.add(archivo);
+		opciones.add(ayuda);
+		this.setJMenuBar(opciones);
 		
 		JLabel title_login = new JLabel();
 		title_login.setText("Iniciar sesion");
