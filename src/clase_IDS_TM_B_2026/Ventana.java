@@ -1,9 +1,13 @@
 package clase_IDS_TM_B_2026;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Toolkit;
@@ -42,10 +46,10 @@ public class Ventana extends JFrame{
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setIconImage(pog);
 		//this.getContentPane().setBackground(Color.decode(getName()));
-		this.setLayout(null);
+		//this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.login();
+		this.calculadora2();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -481,5 +485,152 @@ public class Ventana extends JFrame{
 		
 	}
 	
+	public void calculadora2() {
+		
+		JPanel calc2 = new JPanel();
+		//calc2.setSize(250,400);
+		//calc2.setLocation(100, 50);
+		calc2.setBackground(Color.black);
+		calc2.setLayout(new BorderLayout(250,400));
+		this.add(calc2);
+		
+		JPanel center_panel = new JPanel(); 
+		center_panel.setBackground(Color.green);
+		center_panel.setLayout(new GridLayout(4,3));		
+
+		JButton num7 = new JButton("7");
+		num7.setFont(new Font("Full-Width",Font.BOLD,20));
+		num7.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num7);
+		
+		JButton num8 = new JButton("8");
+		num8.setFont(new Font("Full-Width",Font.BOLD,20));
+		num8.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num8);
+		
+		JButton num9 = new JButton("9");
+		num9.setFont(new Font("Full-Width",Font.BOLD,20));
+		num9.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num9);
+		
+		JButton num4 = new JButton("4");
+		num4.setFont(new Font("Full-Width",Font.BOLD,20));
+		num4.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num4);
+		
+		JButton num5 = new JButton("5");
+		num5.setFont(new Font("Full-Width",Font.BOLD,20));
+		num5.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num5);
+		
+		JButton num6 = new JButton("6");
+		num6.setFont(new Font("Full-Width",Font.BOLD,20));
+		num6.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num6);
+		
+		JButton num1 = new JButton("1");
+		num1.setFont(new Font("Full-Width",Font.BOLD,20));
+		num1.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num1);
+		
+		JButton num2 = new JButton("2");
+		num2.setFont(new Font("Full-Width",Font.BOLD,20));
+		num2.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num2);
+		
+		JButton num3 = new JButton("3");
+		num3.setFont(new Font("Full-Width",Font.BOLD,20));
+		num3.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num3);
+
+		JButton numcam = new JButton("+/-");
+		numcam.setFont(new Font("Full-Width",Font.BOLD,20));
+		numcam.setMargin(new Insets(2,2,2,2));
+		center_panel.add(numcam);
+		
+		JButton num0 = new JButton("0");
+		num0.setFont(new Font("Full-Width",Font.BOLD,20));
+		num0.setMargin(new Insets(2,2,2,2));
+		center_panel.add(num0);
+		
+		JButton numpunt = new JButton(".");
+		numpunt.setFont(new Font("Full-Width",Font.BOLD,20));
+		numpunt.setMargin(new Insets(2,2,2,2));
+		center_panel.add(numpunt);
+		
+		JPanel end_panel = new JPanel();  
+		end_panel.setBackground(Color.green);
+		end_panel.setLayout(new FlowLayout(1,10,10));
+
+		JButton numpor = new JButton("X");
+		numpor.setBounds(190, 160, 50, 50);
+		numpor.setFont(new Font("Full-Width",Font.BOLD,20));
+		numpor.setMargin(new Insets(2,2,2,2));
+		end_panel.add(numpor);
+		
+		JButton numens = new JButton("-");
+		numens.setBounds(190, 220, 50, 50);
+		numens.setFont(new Font("Full-Width",Font.BOLD,20));
+		numens.setMargin(new Insets(2,2,2,2));
+		end_panel.add(numens);
+		
+		JButton numas = new JButton("+");
+		numas.setBounds(190, 280, 50, 50);
+		numas.setFont(new Font("Full-Width",Font.BOLD,20));
+		numas.setMargin(new Insets(2,2,2,2));
+		end_panel.add(numas);		
+		
+		JButton numigu = new JButton("=");
+		numigu.setFont(new Font("Full-Width",Font.BOLD,20));
+		numigu.setMargin(new Insets(2,2,2,2));
+		numigu.setBackground(new Color(214, 79, 45));
+		numigu.setForeground(Color.BLACK);
+		end_panel.add(numigu);
+		
+		JPanel nort_panel = new JPanel();  
+		nort_panel.setBackground(Color.green);
+		nort_panel.setLayout(new FlowLayout(1,5,5));
+		
+		JButton numc = new JButton("MC");
+		numc.setBounds(190, 100, 50, 50);
+		numc.setFont(new Font("Full-Width",Font.BOLD,20));
+		numc.setMargin(new Insets(2,2,2,2));
+		nort_panel.add(numc);		
+		
+		JButton nummmas = new JButton("M+");
+		nummmas.setBounds(190, 100, 50, 50);
+		nummmas.setFont(new Font("Full-Width",Font.BOLD,20));
+		nummmas.setMargin(new Insets(2,2,2,2));
+		nort_panel.add(nummmas);		
+		
+		JButton numC = new JButton("C");
+		numC.setBackground(new Color(95, 205, 217));
+		numC.setFont(new Font("Full-Width",Font.BOLD,20));
+		numC.setMargin(new Insets(2,2,2,2));
+		numC.setForeground(Color.BLACK);
+		nort_panel.add(numC);
+
+		JButton numdiv = new JButton("÷");
+		numdiv.setFont(new Font("Full-Width",Font.BOLD,20));
+		numdiv.setMargin(new Insets(2,2,2,2));
+		nort_panel.add(numdiv);		
+		
+		JPanel abajo_panel = new JPanel();  
+		abajo_panel.setBackground(Color.green);
+		abajo_panel.setLayout(new FlowLayout(1,10,10));
+		
+		JPanel iz_panel = new JPanel();  
+		iz_panel.setBackground(Color.green);
+		iz_panel.setLayout(new FlowLayout(1,10,10));
+		
+		calc2.add(nort_panel,BorderLayout.NORTH);
+		calc2.add(center_panel,BorderLayout.CENTER);
+		calc2.add(end_panel,BorderLayout.EAST);
+		//calc2.add(iz_panel,BorderLayout.WEST);
+		//calc2.add(abajo_panel,BorderLayout.SOUTH);
+	
+	}
+		
+
 	
 }
