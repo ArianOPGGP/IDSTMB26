@@ -488,15 +488,14 @@ public class Ventana extends JFrame{
 	public void calculadora2() {
 		
 		JPanel calc2 = new JPanel();
-		//calc2.setSize(250,400);
-		//calc2.setLocation(100, 50);
+		calc2.setSize(250,400);
 		calc2.setBackground(Color.black);
-		calc2.setLayout(new BorderLayout(250,400));
+		calc2.setLayout(new BorderLayout(5,5));
 		this.add(calc2);
 		
 		JPanel center_panel = new JPanel(); 
-		center_panel.setBackground(Color.green);
-		center_panel.setLayout(new GridLayout(4,3));		
+		center_panel.setLayout(new GridLayout(4,3,5,5));	
+		center_panel.setBackground(Color.black);
 
 		JButton num7 = new JButton("7");
 		num7.setFont(new Font("Full-Width",Font.BOLD,20));
@@ -558,24 +557,21 @@ public class Ventana extends JFrame{
 		numpunt.setMargin(new Insets(2,2,2,2));
 		center_panel.add(numpunt);
 		
-		JPanel end_panel = new JPanel();  
-		end_panel.setBackground(Color.green);
-		end_panel.setLayout(new FlowLayout(1,10,10));
+		JPanel end_panel = new JPanel();
+		end_panel.setLayout(new GridLayout(4,1,5,5));
+		end_panel.setBackground(Color.black);
 
-		JButton numpor = new JButton("X");
-		numpor.setBounds(190, 160, 50, 50);
+		JButton numpor = new JButton("       X       ");
 		numpor.setFont(new Font("Full-Width",Font.BOLD,20));
 		numpor.setMargin(new Insets(2,2,2,2));
 		end_panel.add(numpor);
 		
 		JButton numens = new JButton("-");
-		numens.setBounds(190, 220, 50, 50);
 		numens.setFont(new Font("Full-Width",Font.BOLD,20));
 		numens.setMargin(new Insets(2,2,2,2));
 		end_panel.add(numens);
 		
 		JButton numas = new JButton("+");
-		numas.setBounds(190, 280, 50, 50);
 		numas.setFont(new Font("Full-Width",Font.BOLD,20));
 		numas.setMargin(new Insets(2,2,2,2));
 		end_panel.add(numas);		
@@ -587,48 +583,54 @@ public class Ventana extends JFrame{
 		numigu.setForeground(Color.BLACK);
 		end_panel.add(numigu);
 		
-		JPanel nort_panel = new JPanel();  
-		nort_panel.setBackground(Color.green);
-		nort_panel.setLayout(new FlowLayout(1,5,5));
+		JPanel ariba_panel = new JPanel();
+		ariba_panel.setLayout(new GridLayout(2,1));
+		ariba_panel.setBackground(Color.black);
+		JPanel nort_panel = new JPanel(); 
+		nort_panel.setLayout(new FlowLayout(0,3,2));
+		nort_panel.setBackground(Color.black);
 		
-		JButton numc = new JButton("MC");
-		numc.setBounds(190, 100, 50, 50);
+		JTextField resultado = new JTextField("0.00");
+		resultado.setFont(new Font("Arial",Font.BOLD,26));
+		resultado.setHorizontalAlignment(JTextField.RIGHT);
+		ariba_panel.add(resultado);
+		
+		JButton numc = new JButton("       "
+				+ "MC"
+				+ "       ");
 		numc.setFont(new Font("Full-Width",Font.BOLD,20));
 		numc.setMargin(new Insets(2,2,2,2));
 		nort_panel.add(numc);		
 		
-		JButton nummmas = new JButton("M+");
-		nummmas.setBounds(190, 100, 50, 50);
+		JButton nummmas = new JButton("       "
+				+ "M+"
+				+ "       ");
 		nummmas.setFont(new Font("Full-Width",Font.BOLD,20));
 		nummmas.setMargin(new Insets(2,2,2,2));
 		nort_panel.add(nummmas);		
 		
-		JButton numC = new JButton("C");
+		JButton numC = new JButton("       "
+				+ "C"
+				+ "       ");
 		numC.setBackground(new Color(95, 205, 217));
 		numC.setFont(new Font("Full-Width",Font.BOLD,20));
 		numC.setMargin(new Insets(2,2,2,2));
 		numC.setForeground(Color.BLACK);
 		nort_panel.add(numC);
 
-		JButton numdiv = new JButton("÷");
+		JButton numdiv = new JButton("       "
+				+ "÷"
+				+ "       ");
 		numdiv.setFont(new Font("Full-Width",Font.BOLD,20));
 		numdiv.setMargin(new Insets(2,2,2,2));
-		nort_panel.add(numdiv);		
+		nort_panel.add(numdiv);
 		
-		JPanel abajo_panel = new JPanel();  
-		abajo_panel.setBackground(Color.green);
-		abajo_panel.setLayout(new FlowLayout(1,10,10));
+		ariba_panel.add(nort_panel);
 		
-		JPanel iz_panel = new JPanel();  
-		iz_panel.setBackground(Color.green);
-		iz_panel.setLayout(new FlowLayout(1,10,10));
-		
-		calc2.add(nort_panel,BorderLayout.NORTH);
+		calc2.add(ariba_panel,BorderLayout.NORTH);
 		calc2.add(center_panel,BorderLayout.CENTER);
 		calc2.add(end_panel,BorderLayout.EAST);
-		//calc2.add(iz_panel,BorderLayout.WEST);
-		//calc2.add(abajo_panel,BorderLayout.SOUTH);
-	
+
 	}
 		
 
