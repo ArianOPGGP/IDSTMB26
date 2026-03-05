@@ -49,7 +49,7 @@ public class Ventana extends JFrame{
 		//this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.calculadora2();
+		this.taxes();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -631,6 +631,128 @@ public class Ventana extends JFrame{
 		calc2.add(center_panel,BorderLayout.CENTER);
 		calc2.add(end_panel,BorderLayout.EAST);
 
+	}
+	
+	public void taxes() {
+		
+		JPanel taxi = new JPanel();
+		taxi.setSize(250,400);
+		taxi.setBackground(Color.white);
+		taxi.setLayout(new BorderLayout(30,30));
+		this.add(taxi);
+		
+		JPanel top_panel_taxi = new JPanel();
+		top_panel_taxi.setLayout(new FlowLayout());
+		top_panel_taxi.setAlignmentX(LEFT_ALIGNMENT);
+		
+		JLabel interes = new JLabel("InteréS");
+		interes.setOpaque(false);
+		interes.setFont(new Font("Arial",Font.BOLD,30));
+		interes.setForeground(Color.BLACK);
+		interes.setAlignmentX(LEFT_ALIGNMENT);
+		top_panel_taxi.add(interes);
+				
+		JPanel center_panel_taxi = new JPanel(); 
+		center_panel_taxi.setLayout(new BorderLayout(5,5));
+		center_panel_taxi.setBackground(new Color(39, 245, 87));
+		
+		JPanel center_center_panel_taxi = new JPanel(); 
+		center_center_panel_taxi.setLayout(new GridLayout(3,2,5,5));
+		
+		JLabel capital = new JLabel("Capital: ");
+		capital.setOpaque(false);
+		capital.setFont(new Font("Arial",Font.BOLD,15));
+		capital.setForeground(Color.BLACK);
+		center_center_panel_taxi.add(capital);
+		
+		JTextField capital_result = new JTextField("1500     ");
+		capital_result.setFont(new Font("Arial",Font.BOLD,26));
+		center_center_panel_taxi.add(capital_result);
+		
+		JLabel tiempo = new JLabel("Tiempo: ");
+		tiempo.setOpaque(false);
+		tiempo.setFont(new Font("Arial",Font.BOLD,15));
+		tiempo.setForeground(Color.BLACK);
+		center_center_panel_taxi.add(tiempo);
+		
+		JTextField tiempo_result = new JTextField("2        ");
+		tiempo_result.setFont(new Font("Arial",Font.BOLD,26));
+		center_center_panel_taxi.add(tiempo_result);
+		
+		JLabel tasa = new JLabel("Tasa interés: ");
+		tasa.setOpaque(false);
+		tasa.setFont(new Font("Arial",Font.BOLD,15));
+		tasa.setForeground(Color.BLACK);
+		center_center_panel_taxi.add(tasa);
+		
+		JTextField tasa_result = new JTextField("0.1      ");
+		tasa_result.setFont(new Font("Arial",Font.BOLD,26));
+		center_center_panel_taxi.add(tasa_result);
+		
+		JPanel calc_interes_panel = new JPanel();
+		calc_interes_panel.setLayout(new FlowLayout());
+		
+		JLabel calcular_interes = new JLabel("Calcular Interés ");
+		interes.setOpaque(false);
+		interes.setFont(new Font("Arial",Font.BOLD,15));
+		interes.setForeground(Color.BLACK);
+		calc_interes_panel.add(calcular_interes);
+		
+		JPanel boton_interes_panel = new JPanel();
+		boton_interes_panel.setLayout(new FlowLayout(1,30,10));
+		
+		JButton calcular = new JButton("Calcular");
+		calcular.setFont(new Font("Full-Width",Font.BOLD,20));
+		calcular.setMargin(new Insets(2,2,2,2));
+		boton_interes_panel.add(calcular);
+		
+		JButton cancelar = new JButton("Cancelar");
+		cancelar.setFont(new Font("Full-Width",Font.BOLD,20));
+		cancelar.setMargin(new Insets(2,2,2,2));
+		boton_interes_panel.add(cancelar);
+		
+		center_panel_taxi.add(calc_interes_panel,BorderLayout.NORTH);
+		center_panel_taxi.add(center_center_panel_taxi,BorderLayout.CENTER);
+		center_panel_taxi.add(boton_interes_panel,BorderLayout.SOUTH);
+		
+		
+		JPanel south_panel_taxi = new JPanel();
+		south_panel_taxi.setLayout(new GridLayout(2,1,5,5));
+		south_panel_taxi.setBackground(new Color(222, 0, 62));
+		
+		JPanel interes_panel = new JPanel();
+		interes_panel.setLayout(new FlowLayout());
+		
+		JLabel interes_total = new JLabel("Interés: ");
+		interes_total.setOpaque(false);
+		interes_total.setFont(new Font("Arial",Font.BOLD,15));
+		interes_total.setForeground(Color.BLACK);
+		interes_panel.add(interes_total);
+		
+		JTextField interes_total_result = new JTextField("315.00002");
+		interes_total_result.setFont(new Font("Arial",Font.BOLD,26));
+		interes_panel.add(interes_total_result);
+		
+		JPanel monto_panel = new JPanel();
+		monto_panel.setLayout(new FlowLayout());
+		
+		JLabel monto_total = new JLabel("Monto: ");
+		monto_total.setOpaque(false);
+		monto_total.setFont(new Font("Arial",Font.BOLD,15));
+		monto_total.setForeground(Color.BLACK);
+		monto_panel.add(monto_total);
+		
+		JTextField monto_total_result = new JTextField("1815.00002");
+		monto_total_result.setFont(new Font("Arial",Font.BOLD,26));
+		monto_panel.add(monto_total_result);
+		
+		south_panel_taxi.add(interes_panel,BorderLayout.NORTH);
+		south_panel_taxi.add(monto_panel,BorderLayout.SOUTH);
+		
+		taxi.add(top_panel_taxi,BorderLayout.NORTH);
+		taxi.add(center_panel_taxi,BorderLayout.CENTER);
+		taxi.add(south_panel_taxi,BorderLayout.SOUTH);
+		
 	}
 		
 
