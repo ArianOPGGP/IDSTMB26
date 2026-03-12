@@ -49,7 +49,7 @@ public class Ventana extends JFrame{
 		//this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.taxes();
+		this.registro();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
