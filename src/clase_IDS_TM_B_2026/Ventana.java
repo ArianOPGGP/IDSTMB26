@@ -1,5 +1,6 @@
 package clase_IDS_TM_B_2026;
 
+import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -7,11 +8,17 @@ import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -46,10 +53,10 @@ public class Ventana extends JFrame{
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setIconImage(pog);
 		//this.getContentPane().setBackground(Color.decode(getName()));
-		//this.setLayout(null);
+		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.registro();
+		this.pintar();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -752,6 +759,56 @@ public class Ventana extends JFrame{
 		taxi.add(top_panel_taxi,BorderLayout.NORTH);
 		taxi.add(center_panel_taxi,BorderLayout.CENTER);
 		taxi.add(south_panel_taxi,BorderLayout.SOUTH);
+		
+	}
+	
+	public void pintar() {
+		
+		JPanel pane = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                
+                Graphics2D g2d = (Graphics2D) g;
+                
+                g2d.drawLine(0, 0, 100, 100);
+                
+                g2d.setColor(Color.RED);
+                g2d.setStroke(new BasicStroke(3));
+                g2d.drawLine(200, 200, 400, 200);
+                g2d.drawRect(250, 250, 100, 100);
+                
+                g2d.setColor(Color.GREEN);
+                g2d.drawOval(150, 100, 70, 70);
+                
+                g2d.setColor(Color.BLUE);
+                g2d.setStroke(new BasicStroke(5));
+                g2d.drawArc(300, 100, 100, 100, 90, 90);
+                g2d.drawPolygon(new int[] {200,100,300}, new int[] {100,300,300}, 3);
+                
+                g2d.setColor(Color.ORANGE);
+                g2d.fillRect(150, 250, 50, 150);
+                g2d.fillOval(100, 40, 65, 77);
+                
+                g2d.setColor(Color.RED);
+                g2d.fillArc(200, 50, 80, 90, -50, 160);
+                
+                g2d.fillPolygon(new int[] {30,50,80,74,20}, new int[] {20,80,70,85,100}, 5);
+                
+                BufferedImage image;
+				try {
+					image = ImageIO.read(new File("src/Imagenes/naturaleza.png"));
+					g2d.drawImage(image, 300, 100, null);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                
+            }
+        };
+        
+        pane.setBounds(0, 0, 700, 500);
+        this.add(pane);
 		
 	}
 		
