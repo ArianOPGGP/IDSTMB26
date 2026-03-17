@@ -843,8 +843,20 @@ public class Ventana extends JFrame{
                 g2d.drawLine(450, 300, 450, 450);
                 g2d.drawLine(350, 375, 550, 375);
                 
+                g2d.setColor(new Color(189, 72, 72));//CHIMENEA
+                g2d.fillPolygon(new int[] {120,120,200,200}, new int[] {50,200,200,50},4);
+                g2d.fillPolygon(new int[] {100,100,220,220}, new int[] {30,50,50,30},4);
+                
+                g2d.setColor(new Color(186, 32, 32));//TECHO
+                g2d.fillPolygon(new int[] {20,350,680}, new int[] {200,50,200},3);
+                
                 g2d.setColor(new Color(92, 61, 17));//TRONCO
                 g2d.fillPolygon(new int[] {600,650,650,600}, new int[] {300,300,550,550},4);
+                
+                g2d.setColor(new Color(12, 117, 38));//HOJAS
+                g2d.fillArc(600, 200, 150, 150, 0, 360);
+                g2d.fillArc(500, 200, 150, 150, 0, 360);
+                g2d.fillArc(550, 120, 150, 150, 0, 360);
                 
                 g2d.setStroke(new BasicStroke(1));
                 for (int x = 2; x < 690; x += 25) { //FOR PARA HACER LA VALLA
@@ -863,9 +875,6 @@ public class Ventana extends JFrame{
                 
                 g2d.setColor(new Color(255, 238, 0));//PERILLA
                 g2d.fillArc(120, 425, 10, 10, 0, 360);
-                
-                g2d.setColor(new Color(186, 32, 32));//TECHO
-                g2d.fillPolygon(new int[] {20,350,680}, new int[] {200,50,200},3);
                 
                 g2d.setColor(new Color(255, 255, 0));//SOL
                 g2d.fillArc(-30, -30, 100, 100, 0, 360);
