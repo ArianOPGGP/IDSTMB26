@@ -879,8 +879,6 @@ public class Ventana extends JFrame{
                 g2d.setColor(new Color(255, 255, 0));//SOL
                 g2d.fillArc(-30, -30, 100, 100, 0, 360);
 
-
-
 		
             }
 		};
