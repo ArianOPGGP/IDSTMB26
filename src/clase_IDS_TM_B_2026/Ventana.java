@@ -44,7 +44,7 @@ public class Ventana extends JFrame{
 	{		
 		Image pog = Toolkit.getDefaultToolkit().getImage("Pog.png");
 		
-		this.setSize(500,540);//TAMAÑO VENTANA
+		this.setSize(718,640);//TAMAÑO VENTANA
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//DETENER PROGRAMA AL CERRAR
 		this.setLocationRelativeTo(null);//PONER EN CENTRO
 		this.setMinimumSize(new Dimension(500,500));//TAMAÑO MINIMO 
@@ -56,7 +56,7 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.pintar();
+		this.pintar2();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -811,7 +811,73 @@ public class Ventana extends JFrame{
         this.add(pane);
 		
 	}
+	
+	public void pintar2() {
 		
+		
+		JPanel casa = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                
+                Graphics2D g2d = (Graphics2D) g;
+                
+                g2d.setColor(new Color(39, 166, 245));//CIELO
+                g2d.fillRect(0, 0, 700, 600);
+                
+                g2d.setColor(new Color(34, 122, 16));//PASTO
+                g2d.fillPolygon(new int[] {0,0,700,700}, new int[] {550,600,600,550},4);
+                
+                g2d.setColor(new Color(33, 8, 204));//CASA
+                g2d.fillPolygon(new int[] {50,50,650,650}, new int[] {200,550,550,200},4);
+
+                g2d.setColor(new Color(255, 255, 255));//VENTANA
+                g2d.fillPolygon(new int[] {350,350,550,550}, new int[] {300,450,450,300},4);
+                
+                g2d.setColor(new Color(39, 166, 245, 100));//VENTANA AZULITA
+                g2d.fillPolygon(new int[] {350,350,550,550}, new int[] {300,450,450,300},4);
+                
+                g2d.setColor(new Color(145, 95, 52));//MARCO VENTANA
+                g2d.setStroke(new BasicStroke(5));
+                g2d.drawPolygon(new int[] {350, 350, 550, 550}, new int[] {300, 450, 450, 300}, 4);
+                g2d.drawLine(450, 300, 450, 450);
+                g2d.drawLine(350, 375, 550, 375);
+                
+                g2d.setColor(new Color(92, 61, 17));//TRONCO
+                g2d.fillPolygon(new int[] {600,650,650,600}, new int[] {300,300,550,550},4);
+                
+                g2d.setStroke(new BasicStroke(1));
+                for (int x = 2; x < 690; x += 25) { //FOR PARA HACER LA VALLA
+                	g2d.setColor(new Color(160, 120, 90));
+                    g2d.fillRect(x, 470, 20, 80);
+                    
+                    g2d.fillPolygon(new int[] {x,x+10,x+20}, new int[] {470,460,470},3);
+                } 
+                
+            	g2d.setColor(new Color(160, 90, 90));
+                g2d.fillRect(0, 490, 700, 5); // MADERA HORIZONTAL ARRIBA
+                g2d.fillRect(0, 520, 700, 5); // MADERA HORIZONTAL ABAJO
+                
+                g2d.setColor(new Color(145, 95, 52));//PUERTA
+                g2d.fillPolygon(new int[] {100,100,250,250}, new int[] {300,550,550,300},4);
+                
+                g2d.setColor(new Color(255, 238, 0));//PERILLA
+                g2d.fillArc(120, 425, 10, 10, 0, 360);
+                
+                g2d.setColor(new Color(186, 32, 32));//TECHO
+                g2d.fillPolygon(new int[] {20,350,680}, new int[] {200,50,200},3);
+                
+                g2d.setColor(new Color(255, 255, 0));//SOL
+                g2d.fillArc(-30, -30, 100, 100, 0, 360);
+
+
+
+		
+            }
+		};
+		casa.setBounds(0, 0, 700, 600);
+		this.add(casa);
+	}
 
 	
 }
