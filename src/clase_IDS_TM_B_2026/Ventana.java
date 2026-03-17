@@ -14,6 +14,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +58,8 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.pintar2();
+		this.login();
+		this.registro();
 		
 		this.setVisible(true);//VER VENTANA					
 	}
@@ -161,7 +164,31 @@ public class Ventana extends JFrame{
 		acceder.setSize(160,50);
 		acceder.setFont(new Font("Arial",Font.BOLD,29));
 		acceder.setHorizontalAlignment(JLabel.CENTER);
-		contenedor.add(acceder);	
+		contenedor.add(acceder);
+		acceder.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+				String username_val = username.getText();
+				String contra_val = contraseña.getText();
+				
+				if (username_val.equals("")) {
+					username.setBorder(BorderFactory.createLineBorder(Color.RED));
+				}else {
+					username.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+				}
+				
+				if (contra_val.equals("")) {
+					contraseña.setBorder(BorderFactory.createLineBorder(Color.RED));
+				}else {
+					contraseña.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+				}
+				
+				
+			}		
+		});
 	}
 	
 	public void registro()
