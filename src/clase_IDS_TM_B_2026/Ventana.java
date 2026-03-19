@@ -32,6 +32,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -41,6 +42,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Ventana extends JFrame{
+
+	protected static final Component NULL = null;
 
 	public Ventana() 
 	{		
@@ -185,10 +188,16 @@ public class Ventana extends JFrame{
 				}else {
 					contraseña.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 				}
+				if(username_val.equals("USUARIO") && contra_val.equals("CONTRITA")){
+					JOptionPane.showMessageDialog(NULL, "Bienvenido",contra_val, JOptionPane.OK_OPTION);
+				}else if(!username_val.equals("USUARIO") && !contra_val.equals("CONTRITA")){
+					JOptionPane.showMessageDialog(NULL, "USUARIO O CONTRASEÑA INCORRECTOS",contra_val, JOptionPane.OK_OPTION);
+				}
 				
 				
 			}		
 		});
+		
 	}
 	
 	public void registro()
