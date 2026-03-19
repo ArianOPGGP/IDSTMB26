@@ -61,9 +61,8 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.login();
-		this.registro();
-		
+		this.router("login");
+		//this.registro();
 		this.setVisible(true);//VER VENTANA					
 	}
 	
@@ -196,6 +195,16 @@ public class Ventana extends JFrame{
 				
 				
 			}		
+		});
+		
+		JButton registro = new JButton("Crear una cuenta");
+		registro.setLocation(170,420);
+		registro.setSize(160,50);
+		registro.setFont(new Font("Arial",Font.BOLD,15));
+		registro.setHorizontalAlignment(JLabel.CENTER);
+		contenedor.add(registro);
+		registro.addActionListener(e ->{
+			this.router("registro");
 		});
 		
 	}
@@ -1003,6 +1012,22 @@ public class Ventana extends JFrame{
 		casa.setBounds(0, 0, 700, 600);
 		this.add(casa);
 	}
-
+	
+	public void router(String target) {
+		//String origin = "";
+		
+		this.getContentPane().removeAll();
+		
+		if(target.equals("login"))
+			this.login();
+		
+		if(target.equals("registro"))
+			this.registro();
+		
+		this.setVisible(true);
+		this.repaint();
+		this.revalidate();
+		
+	}
 	
 }
