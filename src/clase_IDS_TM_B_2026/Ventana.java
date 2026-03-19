@@ -46,7 +46,7 @@ public class Ventana extends JFrame{
 	{		
 		Image pog = Toolkit.getDefaultToolkit().getImage("Pog.png");
 		
-		this.setSize(718,640);//TAMAÑO VENTANA
+		this.setSize(1100,700);//TAMAÑO VENTANA
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//DETENER PROGRAMA AL CERRAR
 		this.setLocationRelativeTo(null);//PONER EN CENTRO
 		this.setMinimumSize(new Dimension(500,500));//TAMAÑO MINIMO 
@@ -269,6 +269,13 @@ public class Ventana extends JFrame{
 		//salud_op.setBorder(BorderFactory.createLineBorder(Color.RED));
 		register_contenedor.add(salud_op);
 		
+		JLabel cheki = new JLabel();
+		cheki.setSize(350, 30);
+		cheki.setOpaque(false);
+		cheki.setLocation(80, 305);
+		cheki.setHorizontalAlignment(JLabel.CENTER);
+		register_contenedor.add(cheki);
+		
 		JLabel terminos = new JLabel("Términos");
 		terminos.setBounds(68, 320, 350, 60);
 		terminos.setOpaque(false);
@@ -293,6 +300,13 @@ public class Ventana extends JFrame{
 		terms.add(reject_terms);
 		terms.add(accept_terms);
 		
+		JLabel cheki2 = new JLabel();
+		cheki2.setSize(350, 30);
+		cheki2.setOpaque(false);
+		cheki2.setLocation(80, 365);
+		cheki2.setHorizontalAlignment(JLabel.CENTER);
+		register_contenedor.add(cheki2);
+		
 		String [] colonias = {"Camino real","La fuente","Villas del encanto"};
 		
 		JComboBox list = new JComboBox(colonias);
@@ -307,6 +321,74 @@ public class Ventana extends JFrame{
 		crear.setFont(new Font("Arial",Font.BOLD,29));
 		crear.setHorizontalAlignment(JLabel.CENTER);
 		register_contenedor.add(crear);
+		
+		final boolean[] prefers= {false};
+		dulce_op.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				prefers[0]=true;
+			}
+			
+		});
+		
+		salado_op.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				prefers[0]=true;
+			}
+			
+		});
+		
+		salud_op.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				prefers[0]=true;
+			}
+			
+		});
+		
+		crear.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+				String username_val = username2.getText();
+				String contra_val = biogra.getText();
+				
+				if (username_val.equals("")) {
+					username2.setBorder(BorderFactory.createLineBorder(Color.RED));
+				}else {
+					username2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+				}
+				
+				if (contra_val.equals("")) {
+					biogra.setBorder(BorderFactory.createLineBorder(Color.RED));
+				}else {
+					biogra.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+				}
+				if (prefers[0]==false) {
+					cheki.setBorder(BorderFactory.createLineBorder(Color.RED));
+
+				}else {
+					cheki.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+				}
+				if (accept_terms.isSelected()) {
+					cheki2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+
+				}else {
+					cheki2.setBorder(BorderFactory.createLineBorder(Color.RED));
+				}
+				
+				
+			}		
+		});
 	}
 	
 	public void users()
