@@ -94,9 +94,24 @@ public class Ventana extends JFrame{
 		
 		JMenu ayuda = new JMenu("Ayuda");
 		
+		JMenu cuenta = new JMenu("Cuenta");
+		
+		JMenuItem acceder_top = new JMenuItem("Acceder");
+		acceder_top.addActionListener(e ->{
+			this.router("login");
+		});
+		JMenuItem registrarse_top = new JMenuItem("Registrarse");
+		registrarse_top.addActionListener(e ->{
+			this.router("registro");
+		});
+		
+		cuenta.add(acceder_top);
+		cuenta.add(registrarse_top);
+		
 		JMenuBar opciones = new JMenuBar();
 		opciones.add(archivo);
 		opciones.add(ayuda);
+		opciones.add(cuenta);
 		this.setJMenuBar(opciones);
 		
 		JLabel title_login = new JLabel();
