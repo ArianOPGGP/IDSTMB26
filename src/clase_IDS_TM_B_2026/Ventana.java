@@ -49,20 +49,20 @@ public class Ventana extends JFrame{
 	{		
 		Image pog = Toolkit.getDefaultToolkit().getImage("Pog.png");
 		
-		this.setSize(1100,700);//TAMAÑO VENTANA
+		this.setSize(1619,941);//TAMAÑO VENTANA
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//DETENER PROGRAMA AL CERRAR
 		this.setLocationRelativeTo(null);//PONER EN CENTRO
 		this.setMinimumSize(new Dimension(500,500));//TAMAÑO MINIMO 
 		this.setMaximumSize(new Dimension(500,500));//TAMAÑO MAXIMO
 		this.setTitle("LE VENTANA");//TITULO DE LA VENTANA
-		this.setBackground(Color.LIGHT_GRAY);
+		//this.setBackground(Color.LIGHT_GRAY);
 		this.setIconImage(pog);
 		//this.getContentPane().setBackground(Color.decode(getName()));
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		this.router("login");
-		//this.registro();
+		//this.router("login");
+		this.mario();
 		this.setVisible(true);//VER VENTANA					
 	}
 	
@@ -1043,6 +1043,169 @@ public class Ventana extends JFrame{
 		this.repaint();
 		this.revalidate();
 		
+	}
+	
+	public void mario() {
+		
+		JPanel reino = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                
+                Graphics2D g2d = (Graphics2D) g;
+
+                g2d.setColor(new Color(179, 238, 254));//CIELO
+                g2d.fillRect(0, 0, 1600, 900);
+                
+                g2d.setColor(new Color(253, 145, 99));//CUBO
+                g2d.fillRect(270,100,100,100);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(3));
+                g2d.drawRect(270, 100, 100, 100);
+                g2d.fillArc(275, 105, 7, 7, 0, 360);
+                g2d.fillArc(360, 105, 7, 7, 0, 360);
+                g2d.fillArc(275, 190, 7, 7, 0, 360);
+                g2d.fillArc(360, 190, 7, 7, 0, 360);
+
+                g2d.setColor(new Color(253, 145, 99));//CUBO
+                g2d.fillRect(370,100,100,100);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(3));
+                g2d.drawRect(370, 100, 100, 100);
+                g2d.fillArc(375, 105, 7, 7, 0, 360);
+                g2d.fillArc(460, 105, 7, 7, 0, 360);
+                g2d.fillArc(375, 190, 7, 7, 0, 360);
+                g2d.fillArc(460, 190, 7, 7, 0, 360);
+                
+                g2d.setColor(new Color(253, 145, 99));//CUBO
+                g2d.fillRect(80,320,100,100);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(3));
+                g2d.drawRect(80, 320, 100, 100);
+                g2d.fillArc(85, 325, 7, 7, 0, 360);
+                g2d.fillArc(170, 325, 7, 7, 0, 360);
+                g2d.fillArc(85, 410, 7, 7, 0, 360);
+                g2d.fillArc(170, 410, 7, 7, 0, 360);
+                
+                g2d.setColor(new Color(253, 145, 99));//CUBO
+                g2d.fillRect(1450,200,100,100);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(3));
+                g2d.drawRect(1450, 200, 100, 100);
+                g2d.fillArc(1455, 205, 7, 7, 0, 360);
+                g2d.fillArc(1540, 205, 7, 7, 0, 360);
+                g2d.fillArc(1455, 290, 7, 7, 0, 360);
+                g2d.fillArc(1540, 290, 7, 7, 0, 360);
+
+                
+                g2d.setColor(new Color(252, 197, 190));//PISO
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillRect(0, 800, 1600, 100);
+                g2d.setColor(new Color(233, 149, 121));
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillRect(0, 820, 1600, 100);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawRect(-10, 800, 1620, 20);
+                g2d.setStroke(new BasicStroke(4));
+                g2d.setColor(new Color(0, 0, 0));
+                for (int x = 10,z = 70; x < 16200; x += 50,z +=50) { //FOR PARA RALLAS DEL PISO
+                	g2d.drawLine(x, 830, z, 890);
+                }
+                
+                g2d.setColor(new Color(132, 192, 255));//OBSTACULOS
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillRect(570, 310, 300, 490);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawRect(570, 310, 300, 490);
+                g2d.fillRect(870, 360, 50, 440);
+                g2d.setColor(new Color(181, 198, 208));
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillArc(575, 315, 30, 30, 0, 360);
+                g2d.fillArc(835, 315, 30, 30, 0, 360);
+                
+                g2d.setColor(new Color(255, 195, 184));//OBSTACULOS
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillRect(370, 520, 300, 280);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawRect(370, 520, 300, 280);
+                g2d.fillRect(670, 570, 50, 230);
+                g2d.setColor(new Color(181, 198, 208));
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillArc(375, 525, 30, 30, 0, 360);
+                g2d.fillArc(635, 525, 30, 30, 0, 360);
+                g2d.fillArc(375, 765, 30, 30, 0, 360);
+                g2d.fillArc(635, 765, 30, 30, 0, 360);
+                
+                g2d.setColor(new Color(81, 217, 107));//OBSTACULOS
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillRect(1380, 520, 300, 280);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawRect(1380, 520, 300, 280);
+                g2d.setColor(new Color(181, 198, 208));
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillArc(1385, 525, 30, 30, 0, 360);
+                g2d.fillArc(1385, 765, 30, 30, 0, 360);
+                
+                g2d.setColor(new Color(91, 207, 110));//ARBOL
+                g2d.fillArc(50, 650, 100, 100, 0, 360);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawArc(50, 650, 100, 100, 0, 360);
+                g2d.setColor(new Color(91, 207, 110));
+                g2d.setStroke(new BasicStroke(1));
+                g2d.fillPolygon(new int[] {20, 20, 100, 180, 180}, new int[] {800, 700, 750, 700, 800}, 5);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawPolygon(new int[] {20, 20, 100, 180, 180}, new int[] {800, 700, 750, 700, 800}, 5);
+                
+                g2d.setColor(new Color(26, 134, 23));//TUBERIA
+                g2d.fillRoundRect(1060, 520, 200, 100, 50, 50);
+                g2d.fillRect(1080, 620, 160, 180);
+                g2d.setColor(new Color(0, 0, 0));
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawRect(1080, 620, 160, 180);
+                g2d.setStroke(new BasicStroke(3));
+                g2d.drawRoundRect(1060, 520, 200, 100, 50, 50);
+                
+                g2d.setColor(new Color(255, 255, 255));//NUBE
+                g2d.fillArc(1050, 150, 100, 100, 0, 360);
+                g2d.fillArc(1100, 150, 100, 100, 0, 360);
+                g2d.fillArc(1150, 150, 100, 100, 0, 360);
+
+                BufferedImage image;
+				try {
+					image = ImageIO.read(new File("src/Imagenes/mario.png"));
+					g2d.drawImage(image, 820, 615,150,200, null);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				BufferedImage image_2;
+				try {
+					image_2 = ImageIO.read(new File("src/Imagenes/pirana.png"));
+					g2d.drawImage(image_2, 1086, 325,150,200, null);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				BufferedImage image_3;
+				try {
+					image_3 = ImageIO.read(new File("src/Imagenes/signo-de-interrogacion.png"));
+					g2d.drawImage(image_3, 270, 100,100,100, null);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+            }
+		};
+		reino.setBounds(0, 0, 1600, 900);
+		this.add(reino);
 	}
 	
 }
