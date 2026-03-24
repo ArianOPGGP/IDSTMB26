@@ -61,8 +61,8 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
-		//this.router("login");
-		this.mario();
+		this.router("login");
+		//this.mario();
 		this.setVisible(true);//VER VENTANA					
 	}
 	
@@ -133,6 +133,13 @@ public class Ventana extends JFrame{
 		usuario.setForeground(Color.BLACK);
 		contenedor.add(usuario);
 		
+		JLabel usuario_icon = new JLabel();
+		usuario_icon.setOpaque(false);
+		usuario_icon.setLocation(40, 175);
+		usuario_icon.setSize(40,30);
+		usuario_icon.setIcon(new ImageIcon(Ventana.class.getResource("/Imagenes/cuenta.png")));
+		contenedor.add(usuario_icon);
+		
 		JTextField username = new JTextField();
 		username.setSize(400,30);
 		username.setLocation(40, 175);
@@ -147,6 +154,13 @@ public class Ventana extends JFrame{
 		contra.setFont(new Font("Arial",Font.BOLD,20));
 		contra.setForeground(Color.BLACK);
 		contenedor.add(contra);
+		
+		JLabel usuario_icon_contra = new JLabel();
+		usuario_icon_contra.setOpaque(false);
+		usuario_icon_contra.setLocation(40, 260);
+		usuario_icon_contra.setSize(40,30);
+		usuario_icon_contra.setIcon(new ImageIcon(Ventana.class.getResource("/Imagenes/cerrar-con-llave.png")));
+		contenedor.add(usuario_icon_contra);
 		
 		JPasswordField contraseña = new JPasswordField();
 		contraseña.setSize(400,30);
@@ -221,6 +235,13 @@ public class Ventana extends JFrame{
 		registro.addActionListener(e ->{
 			this.router("registro");
 		});
+		
+		JLabel logito = new JLabel();
+		logito.setOpaque(false);
+		logito.setLocation(100, 0);
+		logito.setSize(1000,600);
+		logito.setIcon(new ImageIcon(Ventana.class.getResource("/Imagenes/edificio-de-oficinas.png")));
+		contenedor.add(logito);
 		
 	}
 	
