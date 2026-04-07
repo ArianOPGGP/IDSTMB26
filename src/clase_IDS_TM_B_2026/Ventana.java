@@ -61,8 +61,9 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		//this.setOpacity(100);
 				
+		this.menu();
 		this.router("login");
-		//this.mario();
+		//this.alta();
 		this.setVisible(true);//VER VENTANA					
 	}
 	
@@ -76,43 +77,7 @@ public class Ventana extends JFrame{
 		contenedor.setLayout(null);
 		this.add(contenedor);
 		
-		JMenu archivo = new JMenu("Archivo");
 		
-		JMenuItem nuevo = new JMenuItem("Nuevo");
-		JMenuItem abrir = new JMenuItem("Abrir");
-		JMenuItem guardar = new JMenuItem("Guardar");
-		JMenuItem cerrar = new JMenuItem("Cerrar");
-		
-		archivo.add(nuevo);
-		archivo.addSeparator();
-		archivo.add(abrir);
-		archivo.addSeparator();
-		archivo.add(guardar);
-		archivo.addSeparator();
-		archivo.add(cerrar);
-		archivo.addSeparator();	
-		
-		JMenu ayuda = new JMenu("Ayuda");
-		
-		JMenu cuenta = new JMenu("Cuenta");
-		
-		JMenuItem acceder_top = new JMenuItem("Acceder");
-		acceder_top.addActionListener(e ->{
-			this.router("login");
-		});
-		JMenuItem registrarse_top = new JMenuItem("Registrarse");
-		registrarse_top.addActionListener(e ->{
-			this.router("registro");
-		});
-		
-		cuenta.add(acceder_top);
-		cuenta.add(registrarse_top);
-		
-		JMenuBar opciones = new JMenuBar();
-		opciones.add(archivo);
-		opciones.add(ayuda);
-		opciones.add(cuenta);
-		this.setJMenuBar(opciones);
 		
 		JLabel title_login = new JLabel();
 		title_login.setText("Iniciar sesion");
@@ -1060,6 +1025,27 @@ public class Ventana extends JFrame{
 		if(target.equals("registro"))
 			this.registro();
 		
+		if(target.equals("recovery"))
+			this.recovery();
+		
+		if(target.equals("alta"))
+			this.alta();
+		
+		if(target.equals("baja"))
+			this.baja();
+		
+		if(target.equals("consultar"))
+			this.consultar();
+		
+		if(target.equals("usuario_como"))
+			this.usuario_como();
+		
+		if(target.equals("acceder_como"))
+			this.acceder_como();
+		
+		if(target.equals("contra_olvida"))
+			this.contra_olvida();
+		
 		this.setVisible(true);
 		this.repaint();
 		this.revalidate();
@@ -1229,4 +1215,234 @@ public class Ventana extends JFrame{
 		this.add(reino);
 	}
 	
+	public void recovery() {
+		
+		JPanel contenedor_recovery = new JPanel();
+		contenedor_recovery.setOpaque(true);
+		contenedor_recovery.setBackground(new Color(15, 194, 6));
+		contenedor_recovery.setSize(500,500);
+		contenedor_recovery.setLocation(0, 0);
+		contenedor_recovery.setLayout(null);
+		this.add(contenedor_recovery);
+						
+		JLabel title_recovery = new JLabel();
+		title_recovery.setText("RECUPERAR");
+		title_recovery.setSize(350, 50);
+		title_recovery.setOpaque(false);
+		title_recovery.setLocation(68, 60);
+		title_recovery.setFont(new Font("Arial",Font.BOLD,50));
+		title_recovery.setHorizontalAlignment(JLabel.CENTER);
+		title_recovery.setForeground(Color.BLACK);
+		contenedor_recovery.add(title_recovery);
+	}
+	
+	public void alta() {
+			
+			JPanel contenedor_alta = new JPanel();
+			contenedor_alta.setOpaque(true);
+			contenedor_alta.setBackground(new Color(15, 194, 6));
+			contenedor_alta.setSize(500,500);
+			contenedor_alta.setLocation(0, 0);
+			contenedor_alta.setLayout(null);
+			this.add(contenedor_alta);
+							
+			JLabel title_alta = new JLabel();
+			title_alta.setText("ALTA");
+			title_alta.setSize(350, 50);
+			title_alta.setOpaque(false);
+			title_alta.setLocation(68, 60);
+			title_alta.setFont(new Font("Arial",Font.BOLD,50));
+			title_alta.setHorizontalAlignment(JLabel.CENTER);
+			title_alta.setForeground(Color.BLACK);
+			contenedor_alta.add(title_alta);
+		}
+
+	public void baja() {
+		
+		JPanel contenedor_baja = new JPanel();
+		contenedor_baja.setOpaque(true);
+		contenedor_baja.setBackground(new Color(15, 194, 6));
+		contenedor_baja.setSize(500,500);
+		contenedor_baja.setLocation(0, 0);
+		contenedor_baja.setLayout(null);
+		this.add(contenedor_baja);
+						
+		JLabel title_baja = new JLabel();
+		title_baja.setText("BAJA");
+		title_baja.setSize(350, 50);
+		title_baja.setOpaque(false);
+		title_baja.setLocation(68, 60);
+		title_baja.setFont(new Font("Arial",Font.BOLD,50));
+		title_baja.setHorizontalAlignment(JLabel.CENTER);
+		title_baja.setForeground(Color.BLACK);
+		contenedor_baja.add(title_baja);
+	}
+	
+	public void consultar() {
+			
+			JPanel contenedor_consultar = new JPanel();
+			contenedor_consultar.setOpaque(true);
+			contenedor_consultar.setBackground(new Color(15, 194, 6));
+			contenedor_consultar.setSize(500,500);
+			contenedor_consultar.setLocation(0, 0);
+			contenedor_consultar.setLayout(null);
+			this.add(contenedor_consultar);
+							
+			JLabel title_consultar = new JLabel();
+			title_consultar.setText("CONSULTAR");
+			title_consultar.setSize(350, 50);
+			title_consultar.setOpaque(false);
+			title_consultar.setLocation(68, 60);
+			title_consultar.setFont(new Font("Arial",Font.BOLD,50));
+			title_consultar.setHorizontalAlignment(JLabel.CENTER);
+			title_consultar.setForeground(Color.BLACK);
+			contenedor_consultar.add(title_consultar);
+		}
+	
+	public void usuario_como() {
+		
+		JPanel contenedor_usuario_como = new JPanel();
+		contenedor_usuario_como.setOpaque(true);
+		contenedor_usuario_como.setBackground(new Color(15, 194, 6));
+		contenedor_usuario_como.setSize(500,500);
+		contenedor_usuario_como.setLocation(0, 0);
+		contenedor_usuario_como.setLayout(null);
+		this.add(contenedor_usuario_como);
+						
+		JLabel title_usuario_como = new JLabel();
+		title_usuario_como.setText("¿Cómo crear un usuario?");
+		title_usuario_como.setSize(350, 50);
+		title_usuario_como.setOpaque(false);
+		title_usuario_como.setLocation(68, 60);
+		title_usuario_como.setFont(new Font("Arial",Font.BOLD,50));
+		title_usuario_como.setHorizontalAlignment(JLabel.CENTER);
+		title_usuario_como.setForeground(Color.BLACK);
+		contenedor_usuario_como.add(title_usuario_como);
+	}
+
+	public void acceder_como() {
+		
+		JPanel contenedor_acceder_como = new JPanel();
+		contenedor_acceder_como.setOpaque(true);
+		contenedor_acceder_como.setBackground(new Color(15, 194, 6));
+		contenedor_acceder_como.setSize(500,500);
+		contenedor_acceder_como.setLocation(0, 0);
+		contenedor_acceder_como.setLayout(null);
+		this.add(contenedor_acceder_como);
+						
+		JLabel title_acceder_como = new JLabel();
+		title_acceder_como.setText("¿Cómo acceder al sistema?");
+		title_acceder_como.setSize(350, 50);
+		title_acceder_como.setOpaque(false);
+		title_acceder_como.setLocation(68, 60);
+		title_acceder_como.setFont(new Font("Arial",Font.BOLD,50));
+		title_acceder_como.setHorizontalAlignment(JLabel.CENTER);
+		title_acceder_como.setForeground(Color.BLACK);
+		contenedor_acceder_como.add(title_acceder_como);
+	}
+
+	public void contra_olvida() {
+		
+		JPanel contenedor_contra_olvida = new JPanel();
+		contenedor_contra_olvida.setOpaque(true);
+		contenedor_contra_olvida.setBackground(new Color(15, 194, 6));
+		contenedor_contra_olvida.setSize(500,500);
+		contenedor_contra_olvida.setLocation(0, 0);
+		contenedor_contra_olvida.setLayout(null);
+		this.add(contenedor_contra_olvida);
+						
+		JLabel title_contra_olvida = new JLabel();
+		title_contra_olvida.setText("¿Qué pasa si olvidé mi contraseña?");
+		title_contra_olvida.setSize(350, 50);
+		title_contra_olvida.setOpaque(false);
+		title_contra_olvida.setLocation(68, 60);
+		title_contra_olvida.setFont(new Font("Arial",Font.BOLD,50));
+		title_contra_olvida.setHorizontalAlignment(JLabel.CENTER);
+		title_contra_olvida.setForeground(Color.BLACK);
+		contenedor_contra_olvida.add(title_contra_olvida);
+	}
+
+	
+	public void menu() {
+		JMenu archivo = new JMenu("Archivo");
+				
+				JMenuItem nuevo = new JMenuItem("Nuevo");
+				JMenuItem abrir = new JMenuItem("Abrir");
+				JMenuItem guardar = new JMenuItem("Guardar");
+				JMenuItem cerrar = new JMenuItem("Cerrar");
+				
+				archivo.add(nuevo);
+				archivo.addSeparator();
+				archivo.add(abrir);
+				archivo.addSeparator();
+				archivo.add(guardar);
+				archivo.addSeparator();
+				archivo.add(cerrar);
+				archivo.addSeparator();	
+				
+				
+				JMenu cuenta = new JMenu("Cuenta");
+				
+				JMenuItem acceder_top = new JMenuItem("Acceder");
+				acceder_top.addActionListener(e ->{
+					this.router("login");
+				});
+				JMenuItem registrarse_top = new JMenuItem("Registrarse");
+				registrarse_top.addActionListener(e ->{
+					this.router("registro");
+				});
+				JMenuItem recovery_top = new JMenuItem("Recuperar");
+				recovery_top.addActionListener(e ->{
+					this.router("recovery");
+				});
+				
+				cuenta.add(acceder_top);
+				cuenta.add(registrarse_top);
+				cuenta.add(recovery_top);
+				
+				JMenu usuarios = new JMenu("Usuarios");
+				
+				JMenuItem alta_top = new JMenuItem("Alta");
+				alta_top.addActionListener(e ->{
+					this.router("alta");
+				});
+				JMenuItem baja_top = new JMenuItem("Baja");
+				baja_top.addActionListener(e ->{
+					this.router("baja");
+				});
+				JMenuItem consultar_top = new JMenuItem("Consultar");
+				consultar_top.addActionListener(e ->{
+					this.router("consultar");
+				});
+
+				usuarios.add(alta_top);
+				usuarios.add(baja_top);
+				usuarios.add(consultar_top);
+				
+				JMenu ayuda = new JMenu("Ayuda");
+				
+				JMenuItem usuario_como_top = new JMenuItem("¿Cómo crear un usuario?");
+				usuario_como_top.addActionListener(e ->{
+					this.router("usuario_como");
+				});
+				JMenuItem acceder_como_top = new JMenuItem("¿Cómo acceder al sistema?");
+				acceder_como_top.addActionListener(e ->{
+					this.router("acceder_como");
+				});
+				JMenuItem contra_olvida_top = new JMenuItem("¿Qué pasa si olvidé mi contraseña?");
+				contra_olvida_top.addActionListener(e ->{
+					this.router("contra_olvida");
+				});
+
+				ayuda.add(usuario_como_top);
+				ayuda.add(acceder_como_top);
+				ayuda.add(contra_olvida_top);
+				
+				JMenuBar opciones = new JMenuBar();
+				opciones.add(archivo);
+				opciones.add(cuenta);
+				opciones.add(usuarios);
+				opciones.add(ayuda);
+				this.setJMenuBar(opciones);
+	}
 }
