@@ -63,7 +63,7 @@ public class Ventana extends JFrame{
 				
 		this.menu();
 		this.router("login");
-		//this.alta();
+		//this.users();
 		this.setVisible(true);//VER VENTANA					
 	}
 	
@@ -1225,15 +1225,38 @@ public class Ventana extends JFrame{
 		contenedor_recovery.setLayout(null);
 		this.add(contenedor_recovery);
 						
-		JLabel title_recovery = new JLabel();
-		title_recovery.setText("RECUPERAR");
-		title_recovery.setSize(350, 50);
-		title_recovery.setOpaque(false);
-		title_recovery.setLocation(68, 60);
-		title_recovery.setFont(new Font("Arial",Font.BOLD,50));
-		title_recovery.setHorizontalAlignment(JLabel.CENTER);
-		title_recovery.setForeground(Color.BLACK);
-		contenedor_recovery.add(title_recovery);
+		JLabel lblTitulo = new JLabel("Recuperar Cuenta");
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
+		lblTitulo.setBounds(140, 50, 250, 30);
+		contenedor_recovery.add(lblTitulo);
+
+		JTextArea txtInstrucciones = new JTextArea("Ingresa tu correo electrónico y te enviaremos las instrucciones para recuperar tu contraseña.");
+		txtInstrucciones.setForeground(Color.BLACK);
+		txtInstrucciones.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtInstrucciones.setBounds(85, 100, 330, 40);
+		txtInstrucciones.setOpaque(false);     
+		txtInstrucciones.setEditable(false);   
+		txtInstrucciones.setFocusable(false);
+		txtInstrucciones.setLineWrap(true);
+		txtInstrucciones.setWrapStyleWord(true); 
+		contenedor_recovery.add(txtInstrucciones);
+
+		JLabel lblCorreo = new JLabel("Correo Electrónico:");
+		lblCorreo.setForeground(Color.BLACK);
+		lblCorreo.setFont(new Font("Arial", Font.BOLD, 14));
+		lblCorreo.setBounds(100, 180, 300, 20);
+		contenedor_recovery.add(lblCorreo);
+
+		JTextField txtCorreo = new JTextField();
+		txtCorreo.setBounds(100, 210, 300, 35);
+		contenedor_recovery.add(txtCorreo);
+
+		JButton btnEnviar = new JButton("Enviar Enlace de Recuperación");
+		btnEnviar.setFont(new Font("Arial", Font.BOLD, 14));
+		btnEnviar.setBounds(100, 280, 300, 40);
+		contenedor_recovery.add(btnEnviar);
+
 	}
 	
 	public void alta() {
@@ -1245,16 +1268,79 @@ public class Ventana extends JFrame{
 			contenedor_alta.setLocation(0, 0);
 			contenedor_alta.setLayout(null);
 			this.add(contenedor_alta);
+
+			JLabel lblTitulo = new JLabel("Alta de Nuevo Usuario");
+			lblTitulo.setForeground(Color.WHITE);
+			lblTitulo.setFont(new Font("Arial", Font.BOLD, 20));
+			lblTitulo.setBounds(100, 20, 300, 30);
+			contenedor_alta.add(lblTitulo);
+			
+			JLabel lblUsuario = new JLabel("Nombre de usuario:");
+			lblUsuario.setForeground(Color.WHITE);
+			lblUsuario.setFont(new Font("Arial", Font.BOLD, 14));
+			lblUsuario.setBounds(40, 70, 200, 20);
+			contenedor_alta.add(lblUsuario);
+			
+			JTextField txtUsuario = new JTextField();
+			txtUsuario.setBounds(40, 95, 220, 30);
+			contenedor_alta.add(txtUsuario);
+			
+			JLabel lblPassword = new JLabel("Contraseña:");
+			lblPassword.setForeground(Color.WHITE);
+			lblPassword.setFont(new Font("Arial", Font.BOLD, 14));
+			lblPassword.setBounds(40, 135, 200, 20);
+			contenedor_alta.add(lblPassword);
+			
+			JPasswordField txtPassword = new JPasswordField();
+			txtPassword.setBounds(40, 160, 220, 30);
+			contenedor_alta.add(txtPassword);
+			
+			JLabel lblCorreo = new JLabel("Correo electrónico:");
+			lblCorreo.setForeground(Color.WHITE);
+			lblCorreo.setFont(new Font("Arial", Font.BOLD, 14));
+			lblCorreo.setBounds(40, 200, 200, 20);
+			contenedor_alta.add(lblCorreo);
+			
+			JTextField txtCorreo = new JTextField();
+			txtCorreo.setBounds(40, 225, 220, 30);
+			contenedor_alta.add(txtCorreo);
+			
+			JLabel lblDescripcion = new JLabel("Breve descripción:");
+			lblDescripcion.setForeground(Color.WHITE);
+			lblDescripcion.setFont(new Font("Arial", Font.BOLD, 14));
+			lblDescripcion.setBounds(40, 265, 200, 20);
+			contenedor_alta.add(lblDescripcion);
+			
+			JTextArea txtDescripcion = new JTextArea();
+			txtDescripcion.setLineWrap(true);
+			txtDescripcion.setWrapStyleWord(true);
+			JScrollPane scrollDescripcion = new JScrollPane(txtDescripcion);
+			scrollDescripcion.setBounds(40, 290, 220, 80);
+			contenedor_alta.add(scrollDescripcion);
+			
+			JLabel lblFotoTexto = new JLabel("Foto de perfil");
+			lblFotoTexto.setForeground(Color.WHITE);
+			lblFotoTexto.setFont(new Font("Arial", Font.BOLD, 14));
+			lblFotoTexto.setBounds(310, 70, 140, 20);
+			contenedor_alta.add(lblFotoTexto);
+			
+			JLabel lblEspacioFoto = new JLabel("Sin imagen");
+			lblEspacioFoto.setOpaque(true);
+			lblEspacioFoto.setBackground(Color.LIGHT_GRAY);
+			lblEspacioFoto.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+			lblEspacioFoto.setBounds(310, 95, 140, 160);
+			contenedor_alta.add(lblEspacioFoto);
+			
+			JButton btnSubirFoto = new JButton("Subir Foto");
+			btnSubirFoto.setBounds(320, 265, 120, 30);
+			contenedor_alta.add(btnSubirFoto);
+			
+			JButton btnRegistrar = new JButton("Registrar Usuario");
+			btnRegistrar.setFont(new Font("Arial", Font.BOLD, 14));
+			btnRegistrar.setBounds(150, 400, 200, 40);
+			contenedor_alta.add(btnRegistrar);
 							
-			JLabel title_alta = new JLabel();
-			title_alta.setText("ALTA");
-			title_alta.setSize(350, 50);
-			title_alta.setOpaque(false);
-			title_alta.setLocation(68, 60);
-			title_alta.setFont(new Font("Arial",Font.BOLD,50));
-			title_alta.setHorizontalAlignment(JLabel.CENTER);
-			title_alta.setForeground(Color.BLACK);
-			contenedor_alta.add(title_alta);
+
 		}
 
 	public void baja() {
@@ -1267,15 +1353,56 @@ public class Ventana extends JFrame{
 		contenedor_baja.setLayout(null);
 		this.add(contenedor_baja);
 						
-		JLabel title_baja = new JLabel();
-		title_baja.setText("BAJA");
-		title_baja.setSize(350, 50);
-		title_baja.setOpaque(false);
-		title_baja.setLocation(68, 60);
-		title_baja.setFont(new Font("Arial",Font.BOLD,50));
-		title_baja.setHorizontalAlignment(JLabel.CENTER);
-		title_baja.setForeground(Color.BLACK);
-		contenedor_baja.add(title_baja);
+		JLabel lblTituloBaja = new JLabel("Dar de Baja Usuario");
+		lblTituloBaja.setForeground(Color.WHITE);
+		lblTituloBaja.setFont(new Font("Arial", Font.BOLD, 22));
+		lblTituloBaja.setBounds(100, 30, 300, 30);
+		contenedor_baja.add(lblTituloBaja);
+		
+		JLabel lblUsuarioBaja = new JLabel("Ingresa el Nombre de Usuario o Num. Control:");
+		lblUsuarioBaja.setForeground(Color.WHITE);
+		lblUsuarioBaja.setFont(new Font("Arial", Font.BOLD, 14));
+		lblUsuarioBaja.setBounds(75, 90, 350, 20);
+		contenedor_baja.add(lblUsuarioBaja);
+		
+		JTextField txtUsuarioBaja = new JTextField();
+		txtUsuarioBaja.setBounds(75, 115, 350, 35);
+		contenedor_baja.add(txtUsuarioBaja);
+		
+		JLabel lblMotivo = new JLabel("Motivo de la baja (Opcional):");
+		lblMotivo.setForeground(Color.WHITE);
+		lblMotivo.setFont(new Font("Arial", Font.BOLD, 14));
+		lblMotivo.setBounds(75, 170, 350, 20);
+		contenedor_baja.add(lblMotivo);
+		
+		JTextArea txtMotivo = new JTextArea();
+		txtMotivo.setLineWrap(true);
+		txtMotivo.setWrapStyleWord(true);
+		JScrollPane scrollMotivo = new JScrollPane(txtMotivo);
+		scrollMotivo.setBounds(75, 195, 350, 80);
+		contenedor_baja.add(scrollMotivo);
+		
+		JTextArea txtAdvertencia = new JTextArea("¡Atención! Al dar de baja a este usuario, todos sus datos serán eliminados del sistema permanentemente. Esta acción no se puede deshacer.");
+		txtAdvertencia.setForeground(Color.YELLOW);
+		txtAdvertencia.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		txtAdvertencia.setBounds(75, 300, 350, 50);
+		txtAdvertencia.setOpaque(false);
+		txtAdvertencia.setEditable(false);
+		txtAdvertencia.setFocusable(false);
+		txtAdvertencia.setLineWrap(true);
+		txtAdvertencia.setWrapStyleWord(true);
+		contenedor_baja.add(txtAdvertencia);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Arial", Font.BOLD, 14));
+		btnCancelar.setBounds(75, 380, 150, 40);
+		contenedor_baja.add(btnCancelar);
+		
+		JButton btnConfirmarBaja = new JButton("Confirmar Baja");
+		btnConfirmarBaja.setFont(new Font("Arial", Font.BOLD, 14));
+		btnConfirmarBaja.setForeground(Color.RED);
+		btnConfirmarBaja.setBounds(275, 380, 150, 40);
+		contenedor_baja.add(btnConfirmarBaja);
 	}
 	
 	public void consultar() {
@@ -1287,16 +1414,50 @@ public class Ventana extends JFrame{
 			contenedor_consultar.setLocation(0, 0);
 			contenedor_consultar.setLayout(null);
 			this.add(contenedor_consultar);
-							
-			JLabel title_consultar = new JLabel();
-			title_consultar.setText("CONSULTAR");
-			title_consultar.setSize(350, 50);
-			title_consultar.setOpaque(false);
-			title_consultar.setLocation(68, 60);
-			title_consultar.setFont(new Font("Arial",Font.BOLD,50));
-			title_consultar.setHorizontalAlignment(JLabel.CENTER);
-			title_consultar.setForeground(Color.BLACK);
-			contenedor_consultar.add(title_consultar);
+
+			JLabel lblTituloBuscar = new JLabel("Búsqueda de Usuarios");
+			lblTituloBuscar.setForeground(Color.WHITE);
+			lblTituloBuscar.setFont(new Font("Arial", Font.BOLD, 22));
+			lblTituloBuscar.setBounds(100, 20, 300, 30);
+			contenedor_consultar.add(lblTituloBuscar);
+
+			JLabel lblCriterio = new JLabel("Ingresa nombre o número de control:");
+			lblCriterio.setForeground(Color.WHITE);
+			lblCriterio.setFont(new Font("Arial", Font.BOLD, 14));
+			lblCriterio.setBounds(50, 70, 300, 20);
+			contenedor_consultar.add(lblCriterio);
+
+			JTextField txtBuscar = new JTextField();
+			txtBuscar.setBounds(50, 95, 270, 30);
+			contenedor_consultar.add(txtBuscar);
+
+			JButton btnBuscar = new JButton("Buscar");
+			btnBuscar.setFont(new Font("Arial", Font.BOLD, 12));
+			btnBuscar.setBounds(330, 95, 120, 30);
+			contenedor_consultar.add(btnBuscar);
+
+			String[] columnasBusqueda = {"Num Control", "Usuario", "Correo", "Estado"};
+
+			Object[][] datosBusqueda = {
+			    {"10191823", "Zuma", "zuma@sistema.com", "Activo"},
+			    {"80195823", "Ari", "ari@sistema.com", "Activo"},
+			    {"83191323", "Rodri", "rodri@sistema.com", "Inactivo"},
+			    {"463171323", "Abaro", "abaro@sistema.com", "Activo"},
+			    {"73946719", "Mendoz", "mendoz@sistema.com", "Suspendido"},
+			    {"11223344", "Luna", "luna@sistema.com", "Activo"},
+			    {"55667788", "Sol", "sol@sistema.com", "Inactivo"}
+			};
+
+			JTable tablaResultados = new JTable(datosBusqueda, columnasBusqueda);
+
+			JScrollPane scrollTabla = new JScrollPane(tablaResultados);
+			scrollTabla.setBounds(50, 150, 400, 230); // x, y, ancho, alto
+			contenedor_consultar.add(scrollTabla);
+
+			JButton btnLimpiar = new JButton("Limpiar Resultados");
+			btnLimpiar.setFont(new Font("Arial", Font.PLAIN, 12));
+			btnLimpiar.setBounds(175, 400, 150, 35);
+			contenedor_consultar.add(btnLimpiar);
 		}
 	
 	public void usuario_como() {
@@ -1309,15 +1470,36 @@ public class Ventana extends JFrame{
 		contenedor_usuario_como.setLayout(null);
 		this.add(contenedor_usuario_como);
 						
-		JLabel title_usuario_como = new JLabel();
-		title_usuario_como.setText("¿Cómo crear un usuario?");
-		title_usuario_como.setSize(350, 50);
-		title_usuario_como.setOpaque(false);
-		title_usuario_como.setLocation(68, 60);
-		title_usuario_como.setFont(new Font("Arial",Font.BOLD,50));
-		title_usuario_como.setHorizontalAlignment(JLabel.CENTER);
-		title_usuario_como.setForeground(Color.BLACK);
-		contenedor_usuario_como.add(title_usuario_como);
+		JLabel lblTituloAyuda = new JLabel("Ayuda: ¿Cómo crear un usuario?");
+		lblTituloAyuda.setForeground(Color.WHITE);
+		lblTituloAyuda.setFont(new Font("Arial", Font.BOLD, 22));
+		lblTituloAyuda.setBounds(50, 30, 400, 30);
+		contenedor_usuario_como.add(lblTituloAyuda);
+
+		String textoInstrucciones = 
+		    "Sigue estos sencillos pasos para registrar un nuevo usuario en el sistema:\n\n" +
+		    "1. Nombre de usuario: Escribe un nombre único. Este será usado para iniciar sesión.\n\n" +
+		    "2. Contraseña: Crea una clave segura. Por tu seguridad, los caracteres se ocultarán.\n\n" +
+		    "3. Correo electrónico: Ingresa una dirección válida para futuras recuperaciones.\n\n" +
+		    "4. Descripción y Foto (Opcional): Puedes agregar detalles extra y subir una imagen de perfil haciendo clic en 'Subir Foto'.\n\n" +
+		    "5. Finalizar: Una vez llenos los datos, presiona el botón 'Registrar Usuario'.";
+
+		JTextArea txtInstrucciones = new JTextArea(textoInstrucciones);
+		txtInstrucciones.setForeground(Color.WHITE);
+		txtInstrucciones.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtInstrucciones.setBounds(50, 90, 400, 270);
+
+		txtInstrucciones.setOpaque(false);
+		txtInstrucciones.setEditable(false);
+		txtInstrucciones.setFocusable(false);
+		txtInstrucciones.setLineWrap(true);
+		txtInstrucciones.setWrapStyleWord(true);
+		contenedor_usuario_como.add(txtInstrucciones);
+
+		JButton btnEntendido = new JButton("Entendido / Volver");
+		btnEntendido.setFont(new Font("Arial", Font.BOLD, 14));
+		btnEntendido.setBounds(150, 390, 200, 40);
+		contenedor_usuario_como.add(btnEntendido);
 	}
 
 	public void acceder_como() {
@@ -1330,15 +1512,36 @@ public class Ventana extends JFrame{
 		contenedor_acceder_como.setLayout(null);
 		this.add(contenedor_acceder_como);
 						
-		JLabel title_acceder_como = new JLabel();
-		title_acceder_como.setText("¿Cómo acceder al sistema?");
-		title_acceder_como.setSize(350, 50);
-		title_acceder_como.setOpaque(false);
-		title_acceder_como.setLocation(68, 60);
-		title_acceder_como.setFont(new Font("Arial",Font.BOLD,50));
-		title_acceder_como.setHorizontalAlignment(JLabel.CENTER);
-		title_acceder_como.setForeground(Color.BLACK);
-		contenedor_acceder_como.add(title_acceder_como);
+		JLabel lblTituloAyudaBusqueda = new JLabel("Ayuda: ¿Cómo buscar usuarios?");
+		lblTituloAyudaBusqueda.setForeground(Color.WHITE);
+		lblTituloAyudaBusqueda.setFont(new Font("Arial", Font.BOLD, 22));
+		lblTituloAyudaBusqueda.setBounds(50, 30, 400, 30);
+		contenedor_acceder_como.add(lblTituloAyudaBusqueda);
+
+		String textoInstruccionesBusqueda = 
+		    "Para encontrar a un usuario registrado en el sistema, sigue estos pasos:\n\n" +
+		    "1. Navegación: Dirígete al menú principal y selecciona la opción para ir a la pantalla de 'Búsqueda de Usuarios'.\n\n" +
+		    "2. Criterio de búsqueda: En el campo de texto, ingresa el Nombre de Usuario o el Número de Control exacto de la persona que deseas encontrar.\n\n" +
+		    "3. Acción: Presiona el botón 'Buscar'.\n\n" +
+		    "4. Resultados: Si el usuario existe, sus datos aparecerán en la tabla inferior. Si la lista de resultados es muy larga, puedes usar la barra de desplazamiento lateral para verlos todos.\n\n" +
+		    "5. Nueva búsqueda: Si deseas buscar a otra persona, presiona 'Limpiar Resultados' para vaciar la tabla.";
+
+		JTextArea txtInstruccionesBusqueda = new JTextArea(textoInstruccionesBusqueda);
+		txtInstruccionesBusqueda.setForeground(Color.WHITE);
+		txtInstruccionesBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtInstruccionesBusqueda.setBounds(50, 90, 400, 270);
+
+		txtInstruccionesBusqueda.setOpaque(false);
+		txtInstruccionesBusqueda.setEditable(false);
+		txtInstruccionesBusqueda.setFocusable(false);
+		txtInstruccionesBusqueda.setLineWrap(true);
+		txtInstruccionesBusqueda.setWrapStyleWord(true);
+		contenedor_acceder_como.add(txtInstruccionesBusqueda);
+
+		JButton btnEntendidoBusqueda = new JButton("Entendido / Volver");
+		btnEntendidoBusqueda.setFont(new Font("Arial", Font.BOLD, 14));
+		btnEntendidoBusqueda.setBounds(150, 390, 200, 40);
+		contenedor_acceder_como.add(btnEntendidoBusqueda);
 	}
 
 	public void contra_olvida() {
@@ -1353,15 +1556,38 @@ public class Ventana extends JFrame{
 						
 		JLabel title_contra_olvida = new JLabel();
 		title_contra_olvida.setText("¿Qué pasa si olvidé mi contraseña?");
-		title_contra_olvida.setSize(350, 50);
+		title_contra_olvida.setSize(400, 50);
 		title_contra_olvida.setOpaque(false);
-		title_contra_olvida.setLocation(68, 60);
-		title_contra_olvida.setFont(new Font("Arial",Font.BOLD,50));
+		title_contra_olvida.setLocation(50, 30);
+		title_contra_olvida.setFont(new Font("Arial", Font.BOLD, 22));
 		title_contra_olvida.setHorizontalAlignment(JLabel.CENTER);
-		title_contra_olvida.setForeground(Color.BLACK);
+		title_contra_olvida.setForeground(Color.WHITE); 
 		contenedor_contra_olvida.add(title_contra_olvida);
-	}
 
+		String textoRecuperacion = 
+		    "¡No te preocupes! Es muy fácil recuperar el acceso a tu cuenta. Solo sigue estos pasos:\n\n" +
+		    "1. Pantalla de inicio: Ve a la pantalla principal donde normalmente inicias sesión.\n\n" +
+		    "2. Opción de recuperación: Haz clic en la opción que dice 'Recuperar Cuenta'.\n\n" +
+		    "3. Ingresa tus datos: Escribe el correo electrónico con el que te registraste en el sistema.\n\n" +
+		    "4. Revisa tu correo: Te enviaremos un mensaje con las instrucciones detalladas y un enlace seguro.\n\n";
+		
+		JTextArea txtInstruccionesContra = new JTextArea(textoRecuperacion);
+		txtInstruccionesContra.setForeground(Color.WHITE);
+		txtInstruccionesContra.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtInstruccionesContra.setBounds(50, 100, 400, 260);
+
+		txtInstruccionesContra.setOpaque(false);
+		txtInstruccionesContra.setEditable(false);
+		txtInstruccionesContra.setFocusable(false);
+		txtInstruccionesContra.setLineWrap(true);
+		txtInstruccionesContra.setWrapStyleWord(true);
+		contenedor_contra_olvida.add(txtInstruccionesContra);
+
+		JButton btnEntendidoContra = new JButton("Entendido / Volver");
+		btnEntendidoContra.setFont(new Font("Arial", Font.BOLD, 14));
+		btnEntendidoContra.setBounds(150, 390, 200, 40);
+		contenedor_contra_olvida.add(btnEntendidoContra);
+	}
 	
 	public void menu() {
 		JMenu archivo = new JMenu("Archivo");
