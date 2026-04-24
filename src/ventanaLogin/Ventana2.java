@@ -1,4 +1,4 @@
-package clase_IDS_TM_B_2026;
+package ventanaLogin;
 
 import java.awt.EventQueue;
 
